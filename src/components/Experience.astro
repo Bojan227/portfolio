@@ -1,0 +1,40 @@
+---
+import ExperienceCard from './ExperienceCard.astro';
+import eniqoImg from '/src/assets/eniqo.png';
+import upwork from '/src/assets/upwork.png';
+
+interface Experience {
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+  companyImage: ImageMetadata;
+}
+
+const experience: Experience[] = [
+  {
+    title: 'Mobile App Developer',
+    company: 'ENIQO GmbH',
+    startDate: 'July 2023',
+    endDate: 'March 2025',
+    description:
+      'As a Mobile Application Developer at Eniqo, I was responsible for designing, developing, and maintaining high-quality mobile application for the iOS and Android platform. My role involved collaborating closely with cross-functional teams to deliver user-centric solutions that align with business objectives.',
+    companyImage: eniqoImg,
+  },
+  {
+    title: 'Full-Stack Developer',
+    company: 'Upwork - Freelancer',
+    startDate: 'March 2023',
+    endDate: 'July 2023',
+    description:
+      'As a Freelance Full Stack Developer on Upwork, I specialized in building dynamic and responsive web applications using React for front-end development and Node.js for back-end services. I collaborated with diverse clients to deliver customized solutions that met their unique business requirements.',
+    companyImage: upwork,
+  },
+];
+---
+
+<div class="flex flex-col gap-2">
+  <h1 class="text-3xl">Work Experience</h1>
+  {experience.map((exp) => <ExperienceCard {...exp} />)}
+</div>

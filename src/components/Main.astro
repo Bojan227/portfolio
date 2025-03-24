@@ -1,0 +1,17 @@
+---
+import Experience from './Experience.astro';
+import Projects from './Projects.astro';
+import Sidebar from './Sidebar.astro';
+import PersonalInfo from './PersonalInfo.astro';
+---
+
+<main
+  class="flex flex-col lg:flex-row bg-dark-200 text-dark-50 font-robo min-h-screen"
+>
+  <Sidebar />
+  <div class="flex flex-col flex-1 p-4 gap-16">
+    <PersonalInfo />
+    <Experience />
+    <Projects />
+  </div>
+</main>
